@@ -104,14 +104,15 @@
 		502A05B6222AB05D0023F545 /* PhoneGuide */ = {
 			isa = PBXGroup;
 			children = (
+				502A05DB222AE4D70023F545 /* Models */,
+				502A05DC222AE4E10023F545 /* ViewModels */,
+				502A05DD222AE4EC0023F545 /* Views */,
+				502A05DE222AE5040023F545 /* ViewControllers */,
 				502A05B7222AB05D0023F545 /* AppDelegate.swift */,
-				502A05B9222AB05D0023F545 /* ViewController.swift */,
 				502A05BB222AB05D0023F545 /* Main.storyboard */,
 				502A05BE222AB05F0023F545 /* Assets.xcassets */,
 				502A05C0222AB05F0023F545 /* LaunchScreen.storyboard */,
 				502A05C3222AB05F0023F545 /* Info.plist */,
-				502A05D7222ABE460023F545 /* FullListViewController.swift */,
-				502A05D9222ABE660023F545 /* FavoriteListViewController.swift */,
 			);
 			path = PhoneGuide;
 			sourceTree = "<group>";
@@ -123,6 +124,37 @@
 				502A05CE222AB05F0023F545 /* Info.plist */,
 			);
 			path = PhoneGuideTests;
+			sourceTree = "<group>";
+		};
+		502A05DB222AE4D70023F545 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		502A05DC222AE4E10023F545 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		502A05DD222AE4EC0023F545 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		502A05DE222AE5040023F545 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				502A05B9222AB05D0023F545 /* ViewController.swift */,
+				502A05D7222ABE460023F545 /* FullListViewController.swift */,
+				502A05D9222ABE660023F545 /* FavoriteListViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		76CCF44E52A68A8511FC12E8 /* Frameworks */ = {
