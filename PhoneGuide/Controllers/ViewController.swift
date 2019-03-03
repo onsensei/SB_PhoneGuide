@@ -55,6 +55,19 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
         }
     }
 
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        if (segue.identifier == "mainVC_to_mobileDetailVC") {
+            let mobileDetailVC:MobileDetailViewController = segue.destination as! MobileDetailViewController
+            mobileDetailVC.mobile = sender as? Mobile
+        }
+    }
+    
     // MARK: - ButtonBarPagerTabStripViewController
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
@@ -64,6 +77,6 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
     // MARK: - FullListViewControllerDelegate
     
     func didSelectMobileAt(index: Int) {
-        //
+        self.performSegue(withIdentifier: "mainVC_to_mobileDetailVC", sender: mobiles[index])
     }
 }
