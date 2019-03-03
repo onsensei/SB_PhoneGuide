@@ -20,6 +20,7 @@
 		502A05E1222AEABC0023F545 /* RequestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A05E0222AEABC0023F545 /* RequestUtil.swift */; };
 		502A05E3222B96260023F545 /* Mobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A05E2222B96260023F545 /* Mobile.swift */; };
 		502A05E5222B96A80023F545 /* MobileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A05E4222B96A80023F545 /* MobileImage.swift */; };
+		502A05E7222BB2900023F545 /* MobileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A05E6222BB2900023F545 /* MobileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		502A05E0222AEABC0023F545 /* RequestUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestUtil.swift; sourceTree = "<group>"; };
 		502A05E2222B96260023F545 /* Mobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile.swift; sourceTree = "<group>"; };
 		502A05E4222B96A80023F545 /* MobileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileImage.swift; sourceTree = "<group>"; };
+		502A05E6222BB2900023F545 /* MobileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileViewModel.swift; sourceTree = "<group>"; };
 		63CC0FEC311A21B1B69528D9 /* Pods_PhoneGuideTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhoneGuideTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		771EBA8FB5FB8DBE61C5E8D4 /* Pods-PhoneGuideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneGuideTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhoneGuideTests/Pods-PhoneGuideTests.release.xcconfig"; sourceTree = "<group>"; };
 		89CFDB0A2703090202FBC8CD /* Pods-PhoneGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneGuide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhoneGuide/Pods-PhoneGuide.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		502A05DC222AE4E10023F545 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				502A05E6222BB2900023F545 /* MobileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				502A05D8222ABE460023F545 /* FullListViewController.swift in Sources */,
 				502A05E5222B96A80023F545 /* MobileImage.swift in Sources */,
 				502A05E1222AEABC0023F545 /* RequestUtil.swift in Sources */,
+				502A05E7222BB2900023F545 /* MobileViewModel.swift in Sources */,
 				502A05E3222B96260023F545 /* Mobile.swift in Sources */,
 				502A05BA222AB05D0023F545 /* ViewController.swift in Sources */,
 				502A05B8222AB05D0023F545 /* AppDelegate.swift in Sources */,
