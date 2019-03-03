@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MobileViewModel: NSObject {
     
@@ -53,5 +54,7 @@ class MobileViewModel: NSObject {
         cell.descriptionLabel.text = desc
         cell.priceLabel.text = priceText
         cell.ratingLabel.text = ratingText
+        
+        cell.mobileImageView.sd_setImage(with: URL(string: thumbImageURL), placeholderImage: UIImage(named: "placeholder"))
     }
 }
