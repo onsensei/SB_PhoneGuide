@@ -53,14 +53,16 @@ class MobileViewModel: NSObject {
     
     // MARK: - Function
     
-    func configureCell(_ cell: MobileTableViewCell) {
+    func configureCell(_ cell: MobileTableViewCell, isShowFavorite: Bool) {
         cell.nameLabel.text = name
         cell.descriptionLabel.text = desc
         cell.priceLabel.text = priceText
         cell.ratingLabel.text = ratingText
         
         cell.mobileImageView.sd_setImage(with: URL(string: thumbImageURL), placeholderImage: UIImage(named: "placeholder"))
+        
         cell.favoriteButton.isSelected = isFavorite
+        cell.favoriteButton.isHidden = !isShowFavorite
     }
     
     func configureDetail(_ vc: MobileDetailViewController) {
