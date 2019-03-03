@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class MobileDetailViewController: UIViewController {
 
     // MARK: - IBOutlet
     
+    @IBOutlet weak var slideshow: ImageSlideshow!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -20,6 +22,7 @@ class MobileDetailViewController: UIViewController {
     
     var mobile:Mobile?
     var mobileVM:MobileViewModel?
+    var mobileImageListVM:MobileImageListViewModel?
     
     // MARK: - UIViewController
     
@@ -29,6 +32,19 @@ class MobileDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         mobileVM = MobileViewModel(mobile: mobile!)
         mobileVM?.configureDetail(self)
+        
+        let pageIndicator = UIPageControl()
+        pageIndicator.currentPageIndicatorTintColor = UIColor.lightGray
+        pageIndicator.pageIndicatorTintColor = UIColor.black
+        slideshow.pageIndicator = pageIndicator
+        slideshow.activityIndicator = DefaultActivityIndicator()
+        
+        RequestUtil.fetchMobileImageList(mobileId: (mobile?.id)!, onSuccess: { (result) in
+            self.mobileImageListVM = MobileImageListViewModel(mobileImages: result)
+            self.mobileImageListVM?.configureImageSlideshow(self.slideshow)
+        }) { (error) in
+            //
+        }
     }
     /*
     // MARK: - Navigation

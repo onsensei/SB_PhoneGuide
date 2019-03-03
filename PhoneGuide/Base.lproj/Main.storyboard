@@ -135,7 +135,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2k-Tx-HZc">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2k-Tx-HZc" customClass="ImageSlideshow" customModule="ImageSlideshow">
                                 <rect key="frame" x="0.0" y="64" width="375" height="233.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -195,6 +195,7 @@
                         <outlet property="descriptionLabel" destination="AcD-BC-dCF" id="GJo-IS-kCX"/>
                         <outlet property="priceLabel" destination="gT9-Cf-vZk" id="RIN-EB-uiT"/>
                         <outlet property="ratingLabel" destination="tis-CD-kXx" id="4Nc-tN-O1v"/>
+                        <outlet property="slideshow" destination="M2k-Tx-HZc" id="hUA-0J-fit"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dfc-Fs-uBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
