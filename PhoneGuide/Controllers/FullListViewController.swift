@@ -54,7 +54,7 @@ class FullListViewController: UIViewController, IndicatorInfoProvider, UITableVi
     // MARK: - IndicatorInfoProvider
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "FullList")
+        return IndicatorInfo(title: "All")
     }
     
     // MARK: - UITableViewDataSource

@@ -30,6 +30,6 @@ class FavoriteListViewController: UIViewController, IndicatorInfoProvider {
     // MARK: - IndicatorInfoProvider
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "FavoriteList")
+        return IndicatorInfo(title: "Favorite")
     }
 }

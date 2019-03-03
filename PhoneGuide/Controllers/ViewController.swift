@@ -45,6 +45,7 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        self.title = "Mobile Phone"
         fullListVC.delegate = self
         
         RequestUtil.fetchMobileList(onSuccess: { (result) in
