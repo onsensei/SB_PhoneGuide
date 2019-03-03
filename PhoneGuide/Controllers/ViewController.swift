@@ -56,7 +56,7 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
                 self.userMobiles.append(UserMobile(mobile: mobile, isFavorite: false))
             }
             
-            self.fullListVC.reloadDataSource(userMobiles: self.userMobiles)
+            self.reloadCurrentChild()
         }) { (error) in
             //
         }
@@ -81,6 +81,19 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
         //
     }
     
+    // MARK: - Function
+    
+    func reloadCurrentChild() {
+        switch currentIndex {
+        case 0:
+            self.fullListVC.reloadDataSource(userMobiles: self.userMobiles)
+        case 1:
+            self.favoriteListVC.reloadDataSource(userMobiles: self.userMobiles)
+        default:
+            print("reloadCurrentChild - please implement this child index at \(currentIndex)")
+        }
+    }
+    
     // MARK: - ButtonBarPagerTabStripViewController
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
@@ -89,11 +102,7 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
     
     override func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
         if indexWasChanged {
-            if toIndex == 0 {
-                self.fullListVC.reloadDataSource(userMobiles: self.userMobiles)
-            } else if toIndex == 1 {
-                self.favoriteListVC.reloadDataSource(userMobiles: self.userMobiles)
-            }
+            self.reloadCurrentChild()
         }
     }
     
@@ -105,7 +114,7 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
     
     func fullListViewController(_ vc: FullListViewController, didPressFavoriteButtonAt index: Int, userMobile: UserMobile) {
         userMobiles[index].isFavorite = !userMobiles[index].isFavorite
-        self.fullListVC.reloadDataSource(userMobiles: userMobiles)
+        self.reloadCurrentChild()
     }
     
     // MARK: - FavoriteListViewControllerDelegate
@@ -116,6 +125,6 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
     
     func favoriteListViewController(_ vc: FavoriteListViewController, didRemoveFavoriteAt index: Int, userMobile: UserMobile) {
         userMobile.isFavorite = !userMobile.isFavorite
-        self.favoriteListVC.reloadDataSource(userMobiles: userMobiles)
+        self.reloadCurrentChild()
     }
 }
