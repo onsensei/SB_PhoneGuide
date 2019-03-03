@@ -20,7 +20,7 @@ class MobileDetailViewController: UIViewController {
     
     // MARK: - Property
     
-    var mobile:Mobile?
+    var userMobile:UserMobile?
     var mobileVM:MobileViewModel?
     var mobileImageListVM:MobileImageListViewModel?
     
@@ -30,16 +30,16 @@ class MobileDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        mobileVM = MobileViewModel(mobile: mobile!)
+        mobileVM = MobileViewModel(userMobile: userMobile!)
         mobileVM?.configureDetail(self)
-        
+
         let pageIndicator = UIPageControl()
         pageIndicator.currentPageIndicatorTintColor = UIColor.lightGray
         pageIndicator.pageIndicatorTintColor = UIColor.black
         slideshow.pageIndicator = pageIndicator
         slideshow.activityIndicator = DefaultActivityIndicator()
-        
-        RequestUtil.fetchMobileImageList(mobileId: (mobile?.id)!, onSuccess: { (result) in
+
+        RequestUtil.fetchMobileImageList(mobileId: (userMobile!.mobile.id), onSuccess: { (result) in
             self.mobileImageListVM = MobileImageListViewModel(mobileImages: result)
             self.mobileImageListVM?.configureImageSlideshow(self.slideshow)
         }) { (error) in

@@ -11,40 +11,44 @@ import SDWebImage
 
 class MobileViewModel: NSObject {
     
-    private let mobile: Mobile
+    private let userMobile: UserMobile
     
-    public init(mobile: Mobile) {
-        self.mobile = mobile
+    public init(userMobile: UserMobile) {
+        self.userMobile = userMobile
     }
     
     // MARK: - Property
     
     public var id: Int {
-        return mobile.id
+        return userMobile.mobile.id
     }
     
     public var desc: String {
-        return mobile.description
+        return userMobile.mobile.description
     }
     
     public var ratingText: String {
-        return "Rating: \(mobile.rating)"
+        return "Rating: \(userMobile.mobile.rating)"
     }
     
     public var priceText: String {
-        return "Price: $\(mobile.price)"
+        return "Price: $\(userMobile.mobile.price)"
     }
     
     public var thumbImageURL: String {
-        return mobile.thumbImageURL
+        return userMobile.mobile.thumbImageURL
     }
     
     public var brand: String {
-        return mobile.brand
+        return userMobile.mobile.brand
     }
     
     public var name: String {
-        return mobile.name
+        return userMobile.mobile.name
+    }
+    
+    public var isFavorite: Bool {
+        return userMobile.isFavorite
     }
     
     // MARK: - Function
@@ -56,6 +60,7 @@ class MobileViewModel: NSObject {
         cell.ratingLabel.text = ratingText
         
         cell.mobileImageView.sd_setImage(with: URL(string: thumbImageURL), placeholderImage: UIImage(named: "placeholder"))
+        cell.favoriteButton.isSelected = isFavorite
     }
     
     func configureDetail(_ vc: MobileDetailViewController) {

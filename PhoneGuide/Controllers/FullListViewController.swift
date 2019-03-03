@@ -44,10 +44,10 @@ class FullListViewController: UIViewController, IndicatorInfoProvider, UITableVi
     */
     // MARK: - Function
     
-    func reloadDataSource(mobiles: [Mobile]) {
+    func reloadDataSource(userMobiles: [UserMobile]) {
         mobileVMs.removeAll()
-        for mobile in mobiles {
-            mobileVMs.append(MobileViewModel(mobile: mobile))
+        for userMobile in userMobiles {
+            mobileVMs.append(MobileViewModel(userMobile: userMobile))
         }
         mobileTableView.reloadData()
     }

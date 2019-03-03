@@ -16,7 +16,7 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
     let fullListVC:FullListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "fullListVC") as! FullListViewController
     let favoriteListVC:FavoriteListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "favoriteListVC") as! FavoriteListViewController
     
-    var mobiles = [Mobile]()
+    var userMobiles = [UserMobile]()
     
     let purpleInspireColor = UIColor(red:0.13, green:0.03, blue:0.25, alpha:1.0)
     
@@ -49,8 +49,12 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
         fullListVC.delegate = self
         
         RequestUtil.fetchMobileList(onSuccess: { (result) in
-            self.mobiles = result
-            self.fullListVC.reloadDataSource(mobiles: result)
+            self.userMobiles.removeAll()
+            for mobile in result {
+                self.userMobiles.append(UserMobile(mobile: mobile, isFavorite: false))
+            }
+            
+            self.fullListVC.reloadDataSource(userMobiles: self.userMobiles)
         }) { (error) in
             //
         }
@@ -65,7 +69,7 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
         
         if (segue.identifier == "mainVC_to_mobileDetailVC") {
             let mobileDetailVC:MobileDetailViewController = segue.destination as! MobileDetailViewController
-            mobileDetailVC.mobile = sender as? Mobile
+            mobileDetailVC.userMobile = sender as? UserMobile
         }
     }
     
@@ -78,7 +82,7 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
     // MARK: - FullListViewControllerDelegate
     
     func fullListViewController(_ vc: FullListViewController, didSelectMobileAt index: Int) {
-        self.performSegue(withIdentifier: "mainVC_to_mobileDetailVC", sender: mobiles[index])
+        self.performSegue(withIdentifier: "mainVC_to_mobileDetailVC", sender: userMobiles[index])
     }
     
     func fullListViewController(_ vc: FullListViewController, didPressFavoriteButtonAt index: Int) {
