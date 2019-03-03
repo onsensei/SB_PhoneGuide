@@ -86,6 +86,7 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
     }
     
     func fullListViewController(_ vc: FullListViewController, didPressFavoriteButtonAt index: Int) {
-        //
+        userMobiles[index].isFavorite = !userMobiles[index].isFavorite
+        self.fullListVC.reloadDataSource(userMobiles: userMobiles)
     }
 }
