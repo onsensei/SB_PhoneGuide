@@ -11,6 +11,7 @@ target 'PhoneGuide' do
   pod 'SDWebImage', '~> 4.0'
   pod 'ImageSlideshow', '~> 1.6'
   pod 'ImageSlideshow/SDWebImage'
+  pod 'JGProgressHUD'
 
   target 'PhoneGuideTests' do
     inherit! :search_paths

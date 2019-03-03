@@ -6,6 +6,7 @@ PODS:
   - ImageSlideshow/SDWebImage (1.7.0):
     - ImageSlideshow/Core
     - SDWebImage (< 5.0, >= 3.7)
+  - JGProgressHUD (2.0.3)
   - SDWebImage (4.4.5):
     - SDWebImage/Core (= 4.4.5)
   - SDWebImage/Core (4.4.5)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.8.1)
   - ImageSlideshow (~> 1.6)
   - ImageSlideshow/SDWebImage
+  - JGProgressHUD
   - SDWebImage (~> 4.0)
   - XLPagerTabStrip (~> 8.1)
 
@@ -22,15 +24,17 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - ImageSlideshow
+    - JGProgressHUD
     - SDWebImage
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   ImageSlideshow: f8eec5e37a980f60923b585ff23b0e140fd24018
+  JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
   XLPagerTabStrip: 63166e21c9844fa30f2d95d30f335e73be5caf22
 
-PODFILE CHECKSUM: 30624da251659195f0e95538e8cb8d4931efde42
+PODFILE CHECKSUM: c46203e2c7a21ddc65a5f6609633243931a31d53
 
 COCOAPODS: 1.5.3
