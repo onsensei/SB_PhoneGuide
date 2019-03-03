@@ -47,7 +47,9 @@ class FavoriteListViewController: UIViewController, IndicatorInfoProvider, UITab
     func reloadDataSource(userMobiles: [UserMobile]) {
         mobileVMs.removeAll()
         for userMobile in userMobiles {
-            mobileVMs.append(MobileViewModel(userMobile: userMobile))
+            if userMobile.isFavorite {
+                mobileVMs.append(MobileViewModel(userMobile: userMobile))
+            }
         }
         mobileTableView.reloadData()
     }
