@@ -55,6 +55,7 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
             }
             
             self.fullListVC.reloadDataSource(userMobiles: self.userMobiles)
+            self.favoriteListVC.reloadDataSource(userMobiles: self.userMobiles)
         }) { (error) in
             //
         }

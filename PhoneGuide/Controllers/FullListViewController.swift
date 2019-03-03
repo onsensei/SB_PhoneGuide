@@ -82,6 +82,7 @@ class FullListViewController: UIViewController, IndicatorInfoProvider, UITableVi
     }
     
     // MARK: - MobileTableViewCellDelegate
+    
     func mobileTableViewCell(_ cell: MobileTableViewCell, didPressFavoriteButtonAt indexPath: IndexPath) {
         if delegate != nil {
             delegate?.fullListViewController(self, didPressFavoriteButtonAt: indexPath.row)
