@@ -49,12 +49,19 @@ class MobileViewModel: NSObject {
     
     // MARK: - Function
     
-    func configure(_ cell: MobileTableViewCell) {
+    func configureCell(_ cell: MobileTableViewCell) {
         cell.nameLabel.text = name
         cell.descriptionLabel.text = desc
         cell.priceLabel.text = priceText
         cell.ratingLabel.text = ratingText
         
         cell.mobileImageView.sd_setImage(with: URL(string: thumbImageURL), placeholderImage: UIImage(named: "placeholder"))
+    }
+    
+    func configureDetail(_ vc: MobileDetailViewController) {
+        vc.title = name
+        vc.descriptionLabel.text = desc
+        vc.priceLabel.text = priceText
+        vc.ratingLabel.text = ratingText
     }
 }

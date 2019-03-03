@@ -65,7 +65,7 @@ class FullListViewController: UIViewController, IndicatorInfoProvider, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MobileTableViewCell", for: indexPath) as! MobileTableViewCell
-        mobileVMs[indexPath.row].configure(cell)
+        mobileVMs[indexPath.row].configureCell(cell)
         return cell
     }
     

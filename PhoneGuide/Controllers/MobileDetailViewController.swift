@@ -19,6 +19,7 @@ class MobileDetailViewController: UIViewController {
     // MARK: - Property
     
     var mobile:Mobile?
+    var mobileVM:MobileViewModel?
     
     // MARK: - UIViewController
     
@@ -26,6 +27,8 @@ class MobileDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        mobileVM = MobileViewModel(mobile: mobile!)
+        mobileVM?.configureDetail(self)
     }
     /*
     // MARK: - Navigation
