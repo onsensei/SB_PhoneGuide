@@ -35,13 +35,16 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bng-yl-87n">
-                        <rect key="frame" x="292" y="8" width="20" height="20"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HP5-SJ-qk2">
+                        <rect key="frame" x="284" y="0.0" width="36" height="36"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="bng-yl-87n" secondAttribute="height" multiplier="1:1" id="JU2-xA-JfJ"/>
-                            <constraint firstAttribute="width" constant="20" id="tfA-Ea-mj2"/>
+                            <constraint firstAttribute="width" constant="36" id="Ob0-9z-UF1"/>
+                            <constraint firstAttribute="width" secondItem="HP5-SJ-qk2" secondAttribute="height" multiplier="1:1" id="z5b-cN-Rb1"/>
                         </constraints>
-                    </imageView>
+                        <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                        <state key="normal" image="favoriteNormal"/>
+                        <state key="selected" image="favoriteActive"/>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlU-qU-aoV">
                         <rect key="frame" x="76" y="29" width="236" height="21"/>
                         <constraints>
@@ -74,26 +77,26 @@
                     <constraint firstItem="pu8-75-deb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="06K-tZ-wWD"/>
                     <constraint firstItem="BlU-qU-aoV" firstAttribute="top" secondItem="7P8-bh-dVy" secondAttribute="bottom" id="0Rn-pY-lqd"/>
                     <constraint firstAttribute="trailing" secondItem="BlU-qU-aoV" secondAttribute="trailing" constant="8" id="1KM-rO-VEv"/>
-                    <constraint firstItem="bng-yl-87n" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="6a2-VM-NWW"/>
+                    <constraint firstItem="HP5-SJ-qk2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8SV-Ll-QdR"/>
                     <constraint firstItem="nvF-Bo-6sC" firstAttribute="width" secondItem="8Qh-qs-gsX" secondAttribute="width" id="CZw-KA-pkY"/>
                     <constraint firstItem="BlU-qU-aoV" firstAttribute="leading" secondItem="7P8-bh-dVy" secondAttribute="leading" id="EQM-ff-0wh"/>
                     <constraint firstItem="7P8-bh-dVy" firstAttribute="leading" secondItem="pu8-75-deb" secondAttribute="trailing" constant="8" id="Eis-gk-7mH"/>
-                    <constraint firstAttribute="trailing" secondItem="bng-yl-87n" secondAttribute="trailing" constant="8" id="GJZ-hC-dZN"/>
                     <constraint firstItem="8Qh-qs-gsX" firstAttribute="top" secondItem="BlU-qU-aoV" secondAttribute="bottom" id="LDb-of-NLH"/>
                     <constraint firstItem="7P8-bh-dVy" firstAttribute="top" secondItem="pu8-75-deb" secondAttribute="top" id="Q1I-qS-Gbf"/>
+                    <constraint firstItem="HP5-SJ-qk2" firstAttribute="leading" secondItem="7P8-bh-dVy" secondAttribute="trailing" id="XTo-YU-FyM"/>
                     <constraint firstAttribute="bottom" secondItem="pu8-75-deb" secondAttribute="bottom" constant="8" id="Xyj-Z3-fdK"/>
                     <constraint firstItem="nvF-Bo-6sC" firstAttribute="leading" secondItem="8Qh-qs-gsX" secondAttribute="trailing" id="bRY-Kk-DHP"/>
                     <constraint firstItem="nvF-Bo-6sC" firstAttribute="top" secondItem="BlU-qU-aoV" secondAttribute="bottom" id="bv8-fe-g8g"/>
                     <constraint firstItem="8Qh-qs-gsX" firstAttribute="leading" secondItem="BlU-qU-aoV" secondAttribute="leading" id="dmV-n5-KgW"/>
                     <constraint firstItem="nvF-Bo-6sC" firstAttribute="trailing" secondItem="BlU-qU-aoV" secondAttribute="trailing" id="kFn-si-fXJ"/>
-                    <constraint firstItem="bng-yl-87n" firstAttribute="leading" secondItem="7P8-bh-dVy" secondAttribute="trailing" constant="8" id="opj-nV-Ud7"/>
                     <constraint firstItem="pu8-75-deb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="qu1-fQ-2xE"/>
+                    <constraint firstAttribute="trailing" secondItem="HP5-SJ-qk2" secondAttribute="trailing" id="vse-ce-vs3"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="descriptionLabel" destination="BlU-qU-aoV" id="Bnq-eu-wxG"/>
-                <outlet property="favoriteImageView" destination="bng-yl-87n" id="k41-GW-bUd"/>
+                <outlet property="favoriteButton" destination="HP5-SJ-qk2" id="CMu-fV-yeU"/>
                 <outlet property="mobileImageView" destination="pu8-75-deb" id="FQC-CZ-Ski"/>
                 <outlet property="nameLabel" destination="7P8-bh-dVy" id="XzB-ZG-Gn1"/>
                 <outlet property="priceLabel" destination="8Qh-qs-gsX" id="cQt-b3-0Oj"/>
@@ -102,4 +105,8 @@
             <point key="canvasLocation" x="40" y="62.968515742128943"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="favoriteActive" width="48" height="48"/>
+        <image name="favoriteNormal" width="48" height="48"/>
+    </resources>
 </document>
