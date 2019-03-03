@@ -17,9 +17,28 @@
                     <view key="view" contentMode="scaleToFill" id="qvh-36-BT2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QXo-S4-6Si">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Azz-va-Vce" id="aft-yf-NCY"/>
+                                    <outlet property="delegate" destination="Azz-va-Vce" id="wcx-Ly-1KY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QXo-S4-6Si" firstAttribute="leading" secondItem="BFZ-pO-QdO" secondAttribute="leading" id="EnL-qM-qu9"/>
+                            <constraint firstItem="BFZ-pO-QdO" firstAttribute="trailing" secondItem="QXo-S4-6Si" secondAttribute="trailing" id="FAt-Zh-hmH"/>
+                            <constraint firstItem="QXo-S4-6Si" firstAttribute="top" secondItem="BFZ-pO-QdO" secondAttribute="top" id="StH-K1-RUE"/>
+                            <constraint firstItem="BFZ-pO-QdO" firstAttribute="bottom" secondItem="QXo-S4-6Si" secondAttribute="bottom" id="vEe-CC-yyC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BFZ-pO-QdO"/>
                     </view>
+                    <connections>
+                        <outlet property="mobileTableView" destination="QXo-S4-6Si" id="tFL-ch-xWv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beK-Th-cOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -32,9 +51,28 @@
                     <view key="view" contentMode="scaleToFill" id="gWX-hI-t2d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vb2-kq-XPc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="78e-uF-aOK" id="avC-si-ffK"/>
+                                    <outlet property="delegate" destination="78e-uF-aOK" id="HC5-5i-A3G"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rWs-fL-lol" firstAttribute="bottom" secondItem="vb2-kq-XPc" secondAttribute="bottom" id="6Jo-yd-CVu"/>
+                            <constraint firstItem="vb2-kq-XPc" firstAttribute="leading" secondItem="rWs-fL-lol" secondAttribute="leading" id="AgA-rF-mwk"/>
+                            <constraint firstItem="rWs-fL-lol" firstAttribute="trailing" secondItem="vb2-kq-XPc" secondAttribute="trailing" id="d88-K2-bG9"/>
+                            <constraint firstItem="vb2-kq-XPc" firstAttribute="top" secondItem="rWs-fL-lol" secondAttribute="top" id="v0z-QL-eDm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rWs-fL-lol"/>
                     </view>
+                    <connections>
+                        <outlet property="mobileTableView" destination="vb2-kq-XPc" id="Bvs-dx-cde"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7D-gC-QRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

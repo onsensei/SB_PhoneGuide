@@ -11,6 +11,8 @@ import XLPagerTabStrip
 
 class FavoriteListViewController: UIViewController, IndicatorInfoProvider {
     
+    @IBOutlet weak var mobileTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

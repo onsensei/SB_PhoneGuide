@@ -11,6 +11,8 @@ import XLPagerTabStrip
 
 class FullListViewController: UIViewController, IndicatorInfoProvider {
 
+    @IBOutlet weak var mobileTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
