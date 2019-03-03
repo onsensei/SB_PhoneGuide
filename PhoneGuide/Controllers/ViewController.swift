@@ -78,7 +78,32 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
     // MARK: - IBAction
     
     @IBAction func onPressSortButton(_ sender: Any) {
-        //
+        let alertController = UIAlertController(title: "Sort", message: "", preferredStyle: .alert)
+        
+        let actionPriceLowToHigh = UIAlertAction(title: "Price low to high", style: .default) { (action:UIAlertAction) in
+            self.userMobiles.sort(by: { $0.mobile.price < $1.mobile.price })
+            self.reloadCurrentChild()
+        }
+        
+        let actionPriceHighToLow = UIAlertAction(title: "Price high to low", style: .default) { (action:UIAlertAction) in
+            self.userMobiles.sort(by: { $0.mobile.price > $1.mobile.price })
+            self.reloadCurrentChild()
+        }
+        
+        let actionRating = UIAlertAction(title: "Rating", style: .default) { (action:UIAlertAction) in
+            self.userMobiles.sort(by: { $0.mobile.rating > $1.mobile.rating })
+            self.reloadCurrentChild()
+        }
+        
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
+            //
+        }
+        
+        alertController.addAction(actionPriceLowToHigh)
+        alertController.addAction(actionPriceHighToLow)
+        alertController.addAction(actionRating)
+        alertController.addAction(actionCancel)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     // MARK: - Function
