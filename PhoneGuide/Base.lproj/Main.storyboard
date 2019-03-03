@@ -116,7 +116,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="I3n-m9-I0p"/>
+                    <navigationItem key="navigationItem" id="I3n-m9-I0p">
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="Obj-l3-BoX">
+                            <connections>
+                                <action selector="onPressSortButton:" destination="BYZ-38-t0r" id="OtV-jx-VWT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="buttonBarView" destination="O4k-Br-TQh" id="dcr-mz-dYr"/>
                         <outlet property="containerView" destination="glp-Rq-TO7" id="PrH-Js-hNb"/>

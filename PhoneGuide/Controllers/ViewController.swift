@@ -75,6 +75,12 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
         }
     }
     
+    // MARK: - IBAction
+    
+    @IBAction func onPressSortButton(_ sender: Any) {
+        //
+    }
+    
     // MARK: - ButtonBarPagerTabStripViewController
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
