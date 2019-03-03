@@ -39,6 +39,7 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
             oldCell?.label.textColor = .black
             newCell?.label.textColor = self?.purpleInspireColor
         }
+        containerView.isScrollEnabled = false
         
         // ----------
         
