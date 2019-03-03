@@ -1,20 +1,26 @@
 PODS:
   - Alamofire (4.8.1)
+  - SDWebImage (4.4.5):
+    - SDWebImage/Core (= 4.4.5)
+  - SDWebImage/Core (4.4.5)
   - XLPagerTabStrip (8.1.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8.1)
+  - SDWebImage (~> 4.0)
   - XLPagerTabStrip (~> 8.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - SDWebImage
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
   XLPagerTabStrip: 63166e21c9844fa30f2d95d30f335e73be5caf22
 
-PODFILE CHECKSUM: a8c97bd3697ba996cedfa7517fcfaa249a4c705a
+PODFILE CHECKSUM: 57c16560fb8d51110ee5115749f9293efcf98f5d
 
 COCOAPODS: 1.5.3
