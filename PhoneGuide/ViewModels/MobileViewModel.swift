@@ -53,6 +53,10 @@ class MobileViewModel: NSObject {
     
     // MARK: - Function
     
+    func getUserMobile() -> UserMobile {
+        return userMobile
+    }
+    
     func configureCell(_ cell: MobileTableViewCell, isShowFavorite: Bool) {
         cell.nameLabel.text = name
         cell.descriptionLabel.text = desc

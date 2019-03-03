@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class ViewController: ButtonBarPagerTabStripViewController, FullListViewControllerDelegate {
+class ViewController: ButtonBarPagerTabStripViewController, FullListViewControllerDelegate, FavoriteListViewControllerDelegate {
 
     // MARK: - Property
     
@@ -48,6 +48,7 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "Mobile Phone"
         fullListVC.delegate = self
+        favoriteListVC.delegate = self
         
         RequestUtil.fetchMobileList(onSuccess: { (result) in
             self.userMobiles.removeAll()
@@ -99,5 +100,15 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
     func fullListViewController(_ vc: FullListViewController, didPressFavoriteButtonAt index: Int) {
         userMobiles[index].isFavorite = !userMobiles[index].isFavorite
         self.fullListVC.reloadDataSource(userMobiles: userMobiles)
+    }
+    
+    // MARK: - FavoriteListViewControllerDelegate
+    
+    func favoriteListViewController(_ vc: FavoriteListViewController, didSelectMobileAt index: Int, userMobile: UserMobile) {
+        self.performSegue(withIdentifier: "mainVC_to_mobileDetailVC", sender: userMobile)
+    }
+    
+    func favoriteListViewController(_ vc: FavoriteListViewController, didRemoveFavoriteAt index: Int, userMobile: UserMobile) {
+        //
     }
 }

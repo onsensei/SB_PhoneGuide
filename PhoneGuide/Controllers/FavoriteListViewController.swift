@@ -10,8 +10,8 @@ import UIKit
 import XLPagerTabStrip
 
 protocol FavoriteListViewControllerDelegate {
-    func favoriteListViewController(_ vc:FavoriteListViewController, didSelectMobileAt index: Int)
-    func favoriteListViewController(_ vc:FavoriteListViewController, didRemoveFavoriteAt index: Int)
+    func favoriteListViewController(_ vc:FavoriteListViewController, didSelectMobileAt index: Int, userMobile: UserMobile)
+    func favoriteListViewController(_ vc:FavoriteListViewController, didRemoveFavoriteAt index: Int, userMobile: UserMobile)
 }
 
 class FavoriteListViewController: UIViewController, IndicatorInfoProvider, UITableViewDataSource, UITableViewDelegate {
@@ -22,7 +22,7 @@ class FavoriteListViewController: UIViewController, IndicatorInfoProvider, UITab
     
     // MARK: - Property
     
-    var delegate : FullListViewControllerDelegate?
+    var delegate : FavoriteListViewControllerDelegate?
     var mobileVMs = [MobileViewModel]()
     
     // MARK: - UIViewController
@@ -77,5 +77,10 @@ class FavoriteListViewController: UIViewController, IndicatorInfoProvider, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if delegate != nil {
+            let userMobile = mobileVMs[indexPath.row].getUserMobile()
+            delegate?.favoriteListViewController(self, didSelectMobileAt: indexPath.row, userMobile: userMobile)
+        }
     }
 }
