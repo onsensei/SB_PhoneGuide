@@ -16,6 +16,8 @@ class MobileViewModel: NSObject {
         self.mobile = mobile
     }
     
+    // MARK: - Property
+    
     public var id: Int {
         return mobile.id
     }
@@ -42,5 +44,14 @@ class MobileViewModel: NSObject {
     
     public var name: String {
         return mobile.name
+    }
+    
+    // MARK: - Function
+    
+    func configure(_ cell: MobileTableViewCell) {
+        cell.nameLabel.text = name
+        cell.descriptionLabel.text = desc
+        cell.priceLabel.text = priceText
+        cell.ratingLabel.text = ratingText
     }
 }
