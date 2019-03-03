@@ -73,6 +73,10 @@ class FavoriteListViewController: UIViewController, IndicatorInfoProvider, UITab
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -81,6 +85,15 @@ class FavoriteListViewController: UIViewController, IndicatorInfoProvider, UITab
         if delegate != nil {
             let userMobile = mobileVMs[indexPath.row].getUserMobile()
             delegate?.favoriteListViewController(self, didSelectMobileAt: indexPath.row, userMobile: userMobile)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            if delegate != nil {
+                let userMobile = mobileVMs[indexPath.row].getUserMobile()
+                delegate?.favoriteListViewController(self, didRemoveFavoriteAt: indexPath.row, userMobile: userMobile)
+            }
         }
     }
 }
