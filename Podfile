@@ -9,6 +9,8 @@ target 'PhoneGuide' do
   pod 'Alamofire', '~> 4.8.1'
   pod 'XLPagerTabStrip', '~> 8.1'
   pod 'SDWebImage', '~> 4.0'
+  pod 'ImageSlideshow', '~> 1.6'
+  pod 'ImageSlideshow/SDWebImage'
 
   target 'PhoneGuideTests' do
     inherit! :search_paths
