@@ -10,8 +10,8 @@ import UIKit
 import XLPagerTabStrip
 
 protocol FullListViewControllerDelegate {
-    func fullListViewController(_ vc:FullListViewController, didSelectMobileAt index: Int)
-    func fullListViewController(_ vc:FullListViewController, didPressFavoriteButtonAt index: Int)
+    func fullListViewController(_ vc:FullListViewController, didSelectMobileAt index: Int, userMobile: UserMobile)
+    func fullListViewController(_ vc:FullListViewController, didPressFavoriteButtonAt index: Int, userMobile: UserMobile)
 }
 
 class FullListViewController: UIViewController, IndicatorInfoProvider, UITableViewDataSource, UITableViewDelegate, MobileTableViewCellDelegate {
@@ -77,7 +77,8 @@ class FullListViewController: UIViewController, IndicatorInfoProvider, UITableVi
         tableView.deselectRow(at: indexPath, animated: true)
         
         if delegate != nil {
-            delegate?.fullListViewController(self, didSelectMobileAt: indexPath.row)
+            let userMobile = mobileVMs[indexPath.row].getUserMobile()
+            delegate?.fullListViewController(self, didSelectMobileAt: indexPath.row, userMobile: userMobile)
         }
     }
     
@@ -85,7 +86,8 @@ class FullListViewController: UIViewController, IndicatorInfoProvider, UITableVi
     
     func mobileTableViewCell(_ cell: MobileTableViewCell, didPressFavoriteButtonAt indexPath: IndexPath) {
         if delegate != nil {
-            delegate?.fullListViewController(self, didPressFavoriteButtonAt: indexPath.row)
+            let userMobile = mobileVMs[indexPath.row].getUserMobile()
+            delegate?.fullListViewController(self, didPressFavoriteButtonAt: indexPath.row, userMobile: userMobile)
         }
     }
 }

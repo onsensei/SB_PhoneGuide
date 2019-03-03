@@ -93,11 +93,11 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
     
     // MARK: - FullListViewControllerDelegate
     
-    func fullListViewController(_ vc: FullListViewController, didSelectMobileAt index: Int) {
+    func fullListViewController(_ vc: FullListViewController, didSelectMobileAt index: Int, userMobile: UserMobile) {
         self.performSegue(withIdentifier: "mainVC_to_mobileDetailVC", sender: userMobiles[index])
     }
     
-    func fullListViewController(_ vc: FullListViewController, didPressFavoriteButtonAt index: Int) {
+    func fullListViewController(_ vc: FullListViewController, didPressFavoriteButtonAt index: Int, userMobile: UserMobile) {
         userMobiles[index].isFavorite = !userMobiles[index].isFavorite
         self.fullListVC.reloadDataSource(userMobiles: userMobiles)
     }
