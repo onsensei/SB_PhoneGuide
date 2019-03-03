@@ -8,6 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import JGProgressHUD
 
 class ViewController: ButtonBarPagerTabStripViewController, FullListViewControllerDelegate, FavoriteListViewControllerDelegate {
 
@@ -19,6 +20,7 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
     var userMobiles = [UserMobile]()
     
     let purpleInspireColor = UIColor(red:0.13, green:0.03, blue:0.25, alpha:1.0)
+    let hud = JGProgressHUD(style: .dark)
     
     // MARK: - UIViewController
     
@@ -49,13 +51,16 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
         self.title = "Mobile Phone"
         fullListVC.delegate = self
         favoriteListVC.delegate = self
+        hud.textLabel.text = "Loading"
         
+        hud.show(in: self.view)
         RequestUtil.fetchMobileList(onSuccess: { (result) in
             self.userMobiles.removeAll()
             for mobile in result {
                 self.userMobiles.append(UserMobile(mobile: mobile, isFavorite: false))
             }
             
+            self.hud.dismiss()
             self.reloadCurrentChild()
         }) { (error) in
             //
