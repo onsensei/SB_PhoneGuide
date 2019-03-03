@@ -9,14 +9,18 @@
 import UIKit
 import XLPagerTabStrip
 
-class ViewController: ButtonBarPagerTabStripViewController {
+class ViewController: ButtonBarPagerTabStripViewController, FullListViewControllerDelegate {
 
+    // MARK: - Property
+    
     let fullListVC:FullListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "fullListVC") as! FullListViewController
     let favoriteListVC:FavoriteListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "favoriteListVC") as! FavoriteListViewController
     
-    var mobileVMs = [MobileViewModel]()
+    var mobiles = [Mobile]()
     
     let purpleInspireColor = UIColor(red:0.13, green:0.03, blue:0.25, alpha:1.0)
+    
+    // MARK: - UIViewController
     
     override func viewDidLoad() {
         // change selected bar color
@@ -41,8 +45,10 @@ class ViewController: ButtonBarPagerTabStripViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-
+        fullListVC.delegate = self
+        
         RequestUtil.fetchMobileList(onSuccess: { (result) in
+            self.mobiles = result
             self.fullListVC.reloadDataSource(mobiles: result)
         }) { (error) in
             //
@@ -53,5 +59,11 @@ class ViewController: ButtonBarPagerTabStripViewController {
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return [fullListVC, favoriteListVC]
+    }
+    
+    // MARK: - FullListViewControllerDelegate
+    
+    func didSelectMobileAt(index: Int) {
+        //
     }
 }

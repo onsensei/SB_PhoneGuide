@@ -9,11 +9,22 @@
 import UIKit
 import XLPagerTabStrip
 
-class FullListViewController: UIViewController, IndicatorInfoProvider, UITableViewDataSource {
+protocol FullListViewControllerDelegate {
+    func didSelectMobileAt(index :Int)
+}
 
-    var mobileVMs = [MobileViewModel]()
+class FullListViewController: UIViewController, IndicatorInfoProvider, UITableViewDataSource, UITableViewDelegate {
+
+    // MARK: - IBOutlet
     
     @IBOutlet weak var mobileTableView: UITableView!
+    
+    // MARK: - Property
+    
+    var delegate : FullListViewControllerDelegate?
+    var mobileVMs = [MobileViewModel]()
+    
+    // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +41,8 @@ class FullListViewController: UIViewController, IndicatorInfoProvider, UITableVi
         // Pass the selected object to the new view controller.
     }
     */
+    // MARK: - Function
+    
     func reloadDataSource(mobiles: [Mobile]) {
         mobileVMs.removeAll()
         for mobile in mobiles {
@@ -54,5 +67,15 @@ class FullListViewController: UIViewController, IndicatorInfoProvider, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "MobileTableViewCell", for: indexPath) as! MobileTableViewCell
         mobileVMs[indexPath.row].configure(cell)
         return cell
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if delegate != nil {
+            delegate?.didSelectMobileAt(index: indexPath.row)
+        }
     }
 }
