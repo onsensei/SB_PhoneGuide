@@ -77,7 +77,11 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
     
     // MARK: - FullListViewControllerDelegate
     
-    func didSelectMobileAt(index: Int) {
+    func fullListViewController(_ vc: FullListViewController, didSelectMobileAt index: Int) {
         self.performSegue(withIdentifier: "mainVC_to_mobileDetailVC", sender: mobiles[index])
+    }
+    
+    func fullListViewController(_ vc: FullListViewController, didPressFavoriteButtonAt index: Int) {
+        //
     }
 }

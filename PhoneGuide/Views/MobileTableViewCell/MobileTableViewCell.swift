@@ -50,7 +50,7 @@ class MobileTableViewCell: UITableViewCell {
         
         let indexPath = superView.indexPath(for: self)
         if delegate != nil {
-            delegate?.mobileTableViewCell(self, didPressFavoriteButtonAt: indexPath)
+            delegate?.mobileTableViewCell(self, didPressFavoriteButtonAt: indexPath!)
         }
     }
 }
