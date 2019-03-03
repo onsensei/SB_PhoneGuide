@@ -55,7 +55,6 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
             }
             
             self.fullListVC.reloadDataSource(userMobiles: self.userMobiles)
-            self.favoriteListVC.reloadDataSource(userMobiles: self.userMobiles)
         }) { (error) in
             //
         }
@@ -78,6 +77,16 @@ class ViewController: ButtonBarPagerTabStripViewController, FullListViewControll
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return [fullListVC, favoriteListVC]
+    }
+    
+    override func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
+        if indexWasChanged {
+            if toIndex == 0 {
+                self.fullListVC.reloadDataSource(userMobiles: self.userMobiles)
+            } else if toIndex == 1 {
+                self.favoriteListVC.reloadDataSource(userMobiles: self.userMobiles)
+            }
+        }
     }
     
     // MARK: - FullListViewControllerDelegate
