@@ -21,6 +21,8 @@
 		502A05E3222B96260023F545 /* Mobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A05E2222B96260023F545 /* Mobile.swift */; };
 		502A05E5222B96A80023F545 /* MobileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A05E4222B96A80023F545 /* MobileImage.swift */; };
 		502A05E7222BB2900023F545 /* MobileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A05E6222BB2900023F545 /* MobileViewModel.swift */; };
+		502A05EB222BB7D30023F545 /* MobileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A05E9222BB7D30023F545 /* MobileTableViewCell.swift */; };
+		502A05EC222BB7D30023F545 /* MobileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502A05EA222BB7D30023F545 /* MobileTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		502A05E2222B96260023F545 /* Mobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile.swift; sourceTree = "<group>"; };
 		502A05E4222B96A80023F545 /* MobileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileImage.swift; sourceTree = "<group>"; };
 		502A05E6222BB2900023F545 /* MobileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileViewModel.swift; sourceTree = "<group>"; };
+		502A05E9222BB7D30023F545 /* MobileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTableViewCell.swift; sourceTree = "<group>"; };
+		502A05EA222BB7D30023F545 /* MobileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MobileTableViewCell.xib; sourceTree = "<group>"; };
 		63CC0FEC311A21B1B69528D9 /* Pods_PhoneGuideTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhoneGuideTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		771EBA8FB5FB8DBE61C5E8D4 /* Pods-PhoneGuideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneGuideTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhoneGuideTests/Pods-PhoneGuideTests.release.xcconfig"; sourceTree = "<group>"; };
 		89CFDB0A2703090202FBC8CD /* Pods-PhoneGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneGuide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhoneGuide/Pods-PhoneGuide.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		502A05DD222AE4EC0023F545 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				502A05E8222BB7960023F545 /* MobileTableViewCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +180,15 @@
 				502A05E0222AEABC0023F545 /* RequestUtil.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		502A05E8222BB7960023F545 /* MobileTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				502A05E9222BB7D30023F545 /* MobileTableViewCell.swift */,
+				502A05EA222BB7D30023F545 /* MobileTableViewCell.xib */,
+			);
+			path = MobileTableViewCell;
 			sourceTree = "<group>";
 		};
 		76CCF44E52A68A8511FC12E8 /* Frameworks */ = {
@@ -273,6 +287,7 @@
 				502A05C2222AB05F0023F545 /* LaunchScreen.storyboard in Resources */,
 				502A05BF222AB05F0023F545 /* Assets.xcassets in Resources */,
 				502A05BD222AB05D0023F545 /* Main.storyboard in Resources */,
+				502A05EC222BB7D30023F545 /* MobileTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +378,7 @@
 			files = (
 				502A05DA222ABE660023F545 /* FavoriteListViewController.swift in Sources */,
 				502A05D8222ABE460023F545 /* FullListViewController.swift in Sources */,
+				502A05EB222BB7D30023F545 /* MobileTableViewCell.swift in Sources */,
 				502A05E5222B96A80023F545 /* MobileImage.swift in Sources */,
 				502A05E1222AEABC0023F545 /* RequestUtil.swift in Sources */,
 				502A05E7222BB2900023F545 /* MobileViewModel.swift in Sources */,
