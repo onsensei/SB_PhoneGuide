@@ -30,6 +30,7 @@ class ViewController: ButtonBarPagerTabStripViewController {
             oldCell?.label.textColor = .black
             newCell?.label.textColor = self?.purpleInspireColor
         }
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -40,4 +41,3 @@ class ViewController: ButtonBarPagerTabStripViewController {
         return [fullListVC, favoriteListVC]
     }
 }
-
