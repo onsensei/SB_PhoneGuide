@@ -10,12 +10,16 @@ import UIKit
 
 class MobileTableViewCell: UITableViewCell {
 
+    // MARK: - IBOutlet
+    
     @IBOutlet weak var mobileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
+    
+    // MARK: - UITableViewCell
     
     override func awakeFromNib() {
         super.awakeFromNib()
