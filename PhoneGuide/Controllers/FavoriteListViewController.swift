@@ -68,7 +68,6 @@ class FavoriteListViewController: UIViewController, IndicatorInfoProvider, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MobileTableViewCell", for: indexPath) as! MobileTableViewCell
-//        cell.delegate = self
         mobileVMs[indexPath.row].configureCell(cell, isShowFavorite: false)
         return cell
     }
