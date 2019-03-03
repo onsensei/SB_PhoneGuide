@@ -13,7 +13,7 @@ protocol FullListViewControllerDelegate {
     func didSelectMobileAt(index :Int)
 }
 
-class FullListViewController: UIViewController, IndicatorInfoProvider, UITableViewDataSource, UITableViewDelegate {
+class FullListViewController: UIViewController, IndicatorInfoProvider, UITableViewDataSource, UITableViewDelegate, MobileTableViewCellDelegate {
 
     // MARK: - IBOutlet
     
@@ -65,6 +65,7 @@ class FullListViewController: UIViewController, IndicatorInfoProvider, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MobileTableViewCell", for: indexPath) as! MobileTableViewCell
+        cell.delegate = self
         mobileVMs[indexPath.row].configureCell(cell)
         return cell
     }
@@ -77,5 +78,10 @@ class FullListViewController: UIViewController, IndicatorInfoProvider, UITableVi
         if delegate != nil {
             delegate?.didSelectMobileAt(index: indexPath.row)
         }
+    }
+    
+    // MARK: - MobileTableViewCellDelegate
+    func mobileTableViewCell(_ cell: MobileTableViewCell, didPressFavoriteButtonAt indexPath: IndexPath) {
+        //
     }
 }

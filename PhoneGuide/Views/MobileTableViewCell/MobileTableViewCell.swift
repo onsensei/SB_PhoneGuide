@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MobileTableViewCellDelegate {
+    func mobileTableViewCell(_ cell: MobileTableViewCell, didPressFavoriteButtonAt indexPath: IndexPath)
+}
+
 class MobileTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlet
@@ -18,6 +22,10 @@ class MobileTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
+    
+    // MARK: - Property
+    
+    var delegate : MobileTableViewCellDelegate?
     
     // MARK: - UITableViewCell
     
@@ -32,4 +40,17 @@ class MobileTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - IBAction
+    
+    @IBAction func onPressFavoriteButton(_ sender: Any) {
+        guard let superView = self.superview as? UITableView else {
+            print("superview is not a UITableView")
+            return
+        }
+        
+        let indexPath = superView.indexPath(for: self)
+        if delegate != nil {
+            delegate?.mobileTableViewCell(self, didPressFavoriteButtonAt: indexPath)
+        }
+    }
 }

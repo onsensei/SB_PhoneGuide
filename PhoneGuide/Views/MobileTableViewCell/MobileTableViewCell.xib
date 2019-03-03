@@ -44,6 +44,9 @@
                         <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                         <state key="normal" image="favoriteNormal"/>
                         <state key="selected" image="favoriteActive"/>
+                        <connections>
+                            <action selector="onPressFavoriteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FiX-g2-FGj"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlU-qU-aoV">
                         <rect key="frame" x="76" y="29" width="236" height="21"/>
