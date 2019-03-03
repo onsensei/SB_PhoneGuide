@@ -10,6 +10,12 @@ import UIKit
 
 class MobileDetailViewController: UIViewController {
 
+    // MARK: - IBOutlet
+    
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     // MARK: - Property
     
     var mobile:Mobile?
